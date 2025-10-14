@@ -19,6 +19,7 @@
   padding: 2rem;
   text-align: left;
   margin: 32px;
+  left: 1150px;
 }
 
 .hero-content .subtitle {
@@ -34,7 +35,7 @@
 .features{
     display: flex;
 }
-.features-item{
+.feature-item{
     flex: 1;
     padding: 2.5rem;
 }
