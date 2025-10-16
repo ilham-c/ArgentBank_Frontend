@@ -5,6 +5,8 @@ import User from './pages/User/User.jsx'
 import './App.css'
 import Header from './components/Header/Header.jsx'
 import Footer from './components/Footer/Footer.jsx'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+
 
 function App() { 
   return ( 
@@ -13,7 +15,11 @@ function App() {
   <Routes> 
       <Route path="/" element={<Home />} /> 
       <Route path="/login" element={<Login />} /> 
-      <Route path="/user" element={<User />} />
+      <Route path="/user" element={
+            <ProtectedRoute>
+              <User />
+            </ProtectedRoute>
+          } />
     </Routes> 
   <Footer/>
     </>
