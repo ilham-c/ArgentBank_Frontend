@@ -62,3 +62,57 @@
     background-color: #00bc77;
     color: #fff;
 }
+
+/* Styles pour le formulaire */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.edit-form h1 {
+  margin-bottom: 1rem;
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-wrapper input {
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 250px;
+  color: grey;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.edit-buttons button[type="submit"] {
+  background-color: #00bc77;
+  color: white;
+}
+
+.edit-buttons button[type="button"] {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}

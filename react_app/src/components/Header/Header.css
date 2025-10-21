@@ -25,7 +25,23 @@
     gap: 0.3rem;
 }
 
+.main-nav-item .logout-button{
+  color: black;
+}
+
 .login-text:hover{
     text-decoration: underline;
+}
+.logout-button {
+  background: none;
+  border: none;
+  color: black;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login{
+  display: flex;
 }
 
