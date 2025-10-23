@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../pages/User/User.css';
+import '../../pages/Profil/Profil.css';
 
 
 

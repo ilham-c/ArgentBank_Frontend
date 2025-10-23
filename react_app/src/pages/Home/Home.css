@@ -60,3 +60,10 @@ p {
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }
+
+@media only screen and (max-width: 769px){
+    .features{
+        display: flex;
+        flex-direction: column;
+    }
+}

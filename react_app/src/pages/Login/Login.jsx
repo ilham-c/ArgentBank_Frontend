@@ -37,7 +37,7 @@ export default function Login() {
   // Si le token est défini (connexion réussie), on redirige vers /user
   useEffect(() => {
     if (token) {
-      navigate('/user');
+      navigate('/profil');
     }
   }, [token, navigate]);
 

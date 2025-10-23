@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, updateUserName } from '../../redux/authentification/authSlice';
-import './User.css';
+import './Profil.css';
 import Account from '../../components/Account/Account';
 
 
@@ -70,7 +70,7 @@ if  (!user || Object.keys(user).length === 0) {
           handleSave();
         }}
       >
-        {/* 🔁 Username modifiable */}
+        {/* Username modifiable */}
         <div className="input-wrapper">
           <label htmlFor="username">User name:</label>
           <input
@@ -82,7 +82,7 @@ if  (!user || Object.keys(user).length === 0) {
           />
         </div>
 
-        {/* 🔁 Prénom en lecture seule */}
+        {/* Prénom en lecture seule */}
         <div className="input-wrapper">
           <label htmlFor="firstName">First name:</label>
           <input
@@ -93,7 +93,7 @@ if  (!user || Object.keys(user).length === 0) {
           />
         </div>
 
-        {/* 🔁 Nom en lecture seule */}
+        {/* Nom en lecture seule */}
         <div className="input-wrapper">
           <label htmlFor="lastName">Last name:</label>
           <input

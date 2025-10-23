@@ -20,9 +20,9 @@ function Header() {
          <div className='login'>
         {token ? (
           <>
-            <Link to="/user" className="main-nav-item">
+            <Link to="/profil" className="main-nav-item">
               <i className="fa fa-user-circle"></i>
-              <span className="login-text">{user.firstName}</span>
+              <span className="login-text">{user.userName || user.firstName}</span>
             </Link>
             <button
               className="main-nav-item logout-button"

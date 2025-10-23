@@ -28,6 +28,8 @@
     box-sizing: border-box;
     text-align: left;
     margin-bottom: 2rem;
+    
+  
 }
 
 .account-content-wrapper {
@@ -88,7 +90,6 @@
   font-size: 1.1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
-  min-width: 250px;
   color: grey;
 }
 
@@ -116,3 +117,15 @@
   color: white;
   border: 1px solid white;
 }
+
+@media only screen and (max-width: 426px) {
+  .account{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-nav-item.logout-button{
+    display: none;
+  }
+}
+
