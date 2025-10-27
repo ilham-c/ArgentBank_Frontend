@@ -1,34 +1,15 @@
-// Permet d'envoyer une action Redux (loginUser)
 import { useDispatch, useSelector } from 'react-redux';
-
-// Permet de créer des états locaux (email et mot de passe)
 import { useState, useEffect } from 'react';
-
-// Import du thunk loginUser depuis le slice d’authentification
 import { loginUser } from '../../redux/authentification/authSlice';
-
-// Pour rediriger l'utilisateur après la connexion
 import { useNavigate } from 'react-router-dom';
-
 import './Login.css';
 
 export default function Login() {
-  // Initialisation du dispatch pour envoyer des actions Redux
   const dispatch = useDispatch();
-
-  // On lit le state global Redux pour connaître l’état de l’authentification
   const { isLoading, error, token } = useSelector((state) => state.auth);
-
-  // useNavigate permet de rediriger vers une autre page
   const navigate = useNavigate();
-
-  // État local pour stocker l’email saisi par l’utilisateur
   const [email, setEmail] = useState('');
-
-  // État local pour stocker le mot de passe saisi
   const [password, setPassword] = useState('');
-
-  // Quand le formulaire est soumis
   const handleSubmit = (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
     dispatch(loginUser({ email, password })); // Envoie l’action pour se connecter
@@ -41,7 +22,7 @@ export default function Login() {
     }
   }, [token, navigate]);
 
-  // Formulaire de connexion
+ 
   return (
     <main className='main bg-dark'>
       <section className='sign-in-content'>
