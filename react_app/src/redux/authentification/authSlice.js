@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-
+// Thunk pour gérer la connexion // 
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ email, password }, thunkAPI) => {
@@ -26,7 +26,7 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// Thunk pour récupérer le profil utilisateur
+// Thunk pour récupérer les informations du profil de l'utilisateur //
 export const getUserProfile = createAsyncThunk(
   'auth/getUserProfile',
   async (_, thunkAPI) => {
@@ -55,6 +55,7 @@ export const getUserProfile = createAsyncThunk(
   }
 );
 
+// Thunk met à jour le profil de l'utilisateur //
 export const updateUserName = createAsyncThunk(
   'auth/updateUserName',
   async (newUserName, thunkAPI) => {
@@ -84,7 +85,7 @@ export const updateUserName = createAsyncThunk(
   }
 );
 
-
+// authSlice gère toute la partie globale liée à la connexion de l’utilisateur//
 const authSlice = createSlice({
   name: 'auth',
   // C’est l’état initial de l’utilisateur avant qu’il soit connecté //
@@ -116,18 +117,20 @@ const authSlice = createSlice({
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.error = null;
-        // active le chargement //
+        // c’est le début du chargement, on indique que la requête est en cours //
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.token = action.payload;
-        // stocke le token //
+        // la requête est un succès, on récupère et stocke le token de l’utilisateur //
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-        // affiche un message d’erreur //
+        // la requête a échoué, on enregistre un message d’erreur pour informer l’utilisateur //
       })
+
+
       // 🔄 Gestion des états pour la récupération du profil utilisateur
       .addCase(getUserProfile.pending, (state) => {
         state.isLoading = true;
@@ -144,6 +147,9 @@ const authSlice = createSlice({
         state.error = action.payload;
         // affiche un message d’erreur lors de la récupération du profil //
       })
+
+
+
       // 🔄 Gestion des états pour la mise à jour du nom d’utilisateur
       .addCase(updateUserName.pending, (state) => {
         state.isLoading = true;

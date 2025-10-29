@@ -122,7 +122,7 @@ if  (!user || Object.keys(user).length === 0) {
         className="edit-button"
         onClick={() => {
           setNewUserName(user.userName); // 👈 on pré-remplit le champ
-          setIsEditing(true);
+          setIsEditing(true); // Passe en mode édition
         }}
       >
         Edit Name
@@ -133,7 +133,7 @@ if  (!user || Object.keys(user).length === 0) {
 
   <h2 className="sr-only">Accounts</h2>
 
-  {accounts.map((account, index) => (
+  {accounts.map((account, index) => (    //Affichage des comptes bancaires// 
     <Account
       key={index}
       title={account.title}
